@@ -4,7 +4,6 @@ const NOTA_MAXIMA = 10;
 const NOTA_APROBACION = 6;
 const NOTA_PROMOCION = 8;
 
-// ===== Funciones flecha: procesos simples =====
 
 const esNotaValida = (entrada) =>
     entrada !== null &&
@@ -20,9 +19,7 @@ const redondear = (numero) => Math.round(numero * 100) / 100;
 const quiereContinuar = (respuesta) =>
     respuesta !== null && (respuesta.trim().toLowerCase() === "si" || respuesta.trim().toLowerCase() === "sí");
 
-// ===== Entrada de datos =====
 
-// Función declarada: pide un texto hasta que no esté vacío y lo retorna
 function pedirNombre(mensaje) {
     let nombre = prompt(mensaje);
     while (nombre === null || nombre.trim() === "") {
@@ -32,7 +29,6 @@ function pedirNombre(mensaje) {
     return nombre.trim();
 }
 
-// Función expresada: pide una nota hasta que sea válida y la retorna como número
 const pedirNota = function (numero, alumno) {
     let entrada = prompt("Ingresa la nota " + numero + " del alumno " + alumno);
     while (!esNotaValida(entrada)) {
@@ -42,7 +38,7 @@ const pedirNota = function (numero, alumno) {
     return Number(entrada);
 };
 
-// ===== Procesamiento de datos =====
+
 
 function obtenerCondicion(promedio) {
     if (promedio >= NOTA_PROMOCION) {
@@ -54,7 +50,6 @@ function obtenerCondicion(promedio) {
     }
 }
 
-// ===== Salida de resultados =====
 
 function mostrarNota(numero, nota) {
     if (nota >= NOTA_APROBACION) {
@@ -70,9 +65,7 @@ function mostrarResultado(alumno, promedio) {
     alert(alumno + " " + condicion + " con un promedio de: " + promedio);
 }
 
-// ===== Simulador =====
 
-// Carga las notas de un alumno, muestra el resultado y retorna su promedio
 function procesarAlumno(cantidadNotas) {
     const alumno = pedirNombre("Ingrese el nombre del alumno");
     let suma = 0;
