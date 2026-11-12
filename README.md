@@ -43,3 +43,4 @@ En esta entrega el simulador está organizado en funciones declaradas, expresada
 
 - HTML
 - JavaScript
+# CoderJS-3ra-Pre-Entrega
